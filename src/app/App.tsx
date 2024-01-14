@@ -1,9 +1,10 @@
 import React from 'react';
+import { Counter } from '../features/Counter';
 
 function App() {
     return (
         <div className="App">
-            check
+            <Counter />
         </div>
     );
 }
