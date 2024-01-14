@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useAppSelector } from "../../app/hooks"
 import { countActions } from "./countSlice"
+import { ManualEditor } from "../../components/ManualEditor"
 
 export const Counter = () => {
 
@@ -15,12 +16,15 @@ export const Counter = () => {
         dispatch(countActions.decreaseValue())
     }
 
+    const changeValue = (value: number) => {
+        dispatch(countActions.changeValue(value))
+    }
+
     return (
         <>
-            <div>{count}</div>
+            <ManualEditor value={count} changeValue={changeValue}/>
             <button onClick={increaseValue}>Increase</button>
             <button onClick={decreaseValue}>Decrease</button>
         </>
-        
     )
 }

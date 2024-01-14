@@ -9,8 +9,8 @@ const slice = createSlice({
     initialState,
     reducers: (create) => {
         return {
-            changeValue: create.reducer((state, action: PayloadAction<initialStateType>) => {
-                state.count = action.payload.count
+            changeValue: create.reducer((state, action: PayloadAction<number>) => {
+                state.count = action.payload
             }),
             increaseValue: create.reducer((state, action: PayloadAction<undefined>) => {
                 state.count += 1
