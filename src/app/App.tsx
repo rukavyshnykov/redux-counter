@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Counter } from '../features/Counter';
+import { Settings } from 'features/Settings';
+import { Counter } from 'features/Counter';
 import { useAppSelector } from './hooks';
 
 export type ModeType = 'counter' | 'edit'
@@ -10,7 +10,7 @@ const App = () => {
 
     return (
         <div className="App">
-            {mode === 'counter' ? <Counter /> : <></>}
+            {mode === 'counter' ? <Counter /> : <Settings />}
         </div>
     );
 }
