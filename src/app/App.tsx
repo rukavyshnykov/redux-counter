@@ -1,5 +1,6 @@
-import { Settings } from 'features/Settings';
-import { Counter } from 'features/Counter';
+
+import { Counter } from '../features/Counter';
+import { Settings } from '../features/Settings';
 import { useAppSelector } from './hooks';
 
 export type ModeType = 'counter' | 'edit'
