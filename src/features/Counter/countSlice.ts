@@ -12,10 +12,10 @@ const slice = createSlice({
             changeValue: create.reducer((state, action: PayloadAction<number>) => {
                 state.count = action.payload
             }),
-            increaseValue: create.reducer((state, action: PayloadAction<undefined>) => {
+            increaseValue: create.reducer((state, _) => {
                 state.count += 1
             }),
-            decreaseValue: create.reducer((state, action: PayloadAction<undefined>) => {
+            decreaseValue: create.reducer((state, _) => {
                 state.count -= 1
             }),
 

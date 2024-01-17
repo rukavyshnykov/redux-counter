@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Counter } from '../features/Counter';
+import { useAppSelector } from './hooks';
 
-function App() {
+export type ModeType = 'counter' | 'edit'
+
+const App = () => {
+
+    const mode = useAppSelector(state => state.app.mode)
+
     return (
         <div className="App">
-            <Counter />
+            {mode === 'counter' ? <Counter /> : <></>}
         </div>
     );
 }

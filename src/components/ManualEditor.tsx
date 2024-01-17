@@ -1,8 +1,9 @@
 import { useState } from "react"
+import cl from '../features/Counter/Counter.module.css'
 
 type ManualEditorPropsType = {
     value: number,
-    changeValue: (newValue: number) => void
+    changeValue: (newValue: number) => void,
 }
 
 export const ManualEditor = ({ value, changeValue }: ManualEditorPropsType) => {
@@ -21,8 +22,8 @@ export const ManualEditor = ({ value, changeValue }: ManualEditorPropsType) => {
     }
 
     return editMode ? (
-        <input value={count} onBlur={finishEditMode} onChange={(e) => setCount(Number(e.currentTarget.value))} autoFocus />
+        <input className={cl.inputEditor} value={count} onBlur={finishEditMode} onChange={(e) => setCount(Number(e.currentTarget.value))} autoFocus />
     ) : (
-        <div onDoubleClick={activateEditMode}>{value}</div>
+        <div className={cl.divEditor} onDoubleClick={activateEditMode}>{value}</div>
     )
 }
